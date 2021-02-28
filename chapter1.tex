@@ -1,0 +1,81 @@
+\section{Normed, metric spaces}
+
+\subsection{Metrics and norms}
+
+\begin{definition}[Metric]
+Let $M$ be a set. A \bol{metric} $d$ "on $M$" is a function $\func{d}{M\times M}{\R}$ with the properties
+\begin{enumerate}
+\item $d(x,y)\geq0$ for all $x,y\in M$
+\item $d(x,y)=0$ iff \emph{(}if and only if\emph{)} $x=y$
+\item $d(x,y)=d(y,x)$ for all $x,y\in M$ \emph{(}symmetry\emph{)}
+\item $d(x,z)\leq d(x,y)+d(y,z)$ for all $x,y,z\in M$ \emph{(}triangle inequality\emph{)}
+\end{enumerate}
+If $2.$ does not hold, $d$ is called \bol{semi-metric} or \bol{pseudo-metric}. 
+We write $(M,d)$ for a metric space, or just $M$.
+\end{definition}
+
+\begin{definition}[Normed linear space]
+A \bol{normed linear space} $V$ over $\K$ \emph{(}$\K=\R$ or $\C$\emph{)} is a vector space $V$ 
+with a real-valued function $\func{\|\cdot\|}{V}{\R_{\geq0}}$ \emph{(}the \bol{norm}\emph{)} such that
+\begin{enumerate}
+    \item $\|f\|=0\Lorarr f=0$.
+    \item $\|\lambda f\|=|\lambda|\|f\|$ for all $f\in V,\lambda\in\K$.
+    \item $\|f+g\|\leq\|f\|+\|g\|$ for all $f,g\in V$ \emph{(}triangle inequality for norms\emph{)}.
+\end{enumerate}
+If $\|\cdot\|$ obeys 2. and 3. but not 1., we call it \bol{semi-norm} \emph{(}or \bol{pseudo-norm}\emph{)}. 
+We write $(V,\|\cdot\|)$ for a normed vector space.
+\end{definition}
+
+\subsection{Open, closed}
+
+\begin{definition*}[Distance of sets]
+The distance of sets \(A_1, A_2 \subset M\) is defined by 
+\[d(A_1,A_2):=\inf\{d(x,y):\,x\in A_1,y\in A_2\},\]
+where $\inf\emptyset:=\infty$, i.e. $d(A,\emptyset)=\infty$. Then $d(\{x\},\{y\})=d(x,y)$ for all $x,y\in M$. We also set
+\[d(x,A):=\inf\{d(x,y):\,y\in A\}\]
+for $x\in M$ and $A\subset M$ as the \rec{\bol{distance from $x$ to $A$}} (or from $A$ to $x$).
+\end{definition*}
+
+\begin{definition}[Open balls]
+For $x\in M$, $r>0$ we define 
+\[B_r(x):=\{y\in M:\,d(x,y)<r\}\]
+as the \bol{open ball of radius $r$ around $x$}. Moreover, if $A\subset M$, we set
+\[B_r(A):=\{y\in M:\,d(y,A)<r\}\]
+as the \bol{$r$ neighborhood of $A$}\index{neighborhood}. So $B_r(x)=B_r(\{x\})$. 
+\end{definition}
+
+\begin{definition}[Open/closed sets]
+A set $O\subset M$ is \bol{open} if
+\[\forall x\in O\,\exists r>0:\,B_r(x)\subset O.\]
+A set $A\subset M$ is \bol{closed} if $A^c=M\setminus A=\{x\in M:\, x\notin A\}$ is open. 
+\emph{(}This is the topological definition of a 'closed set'\emph{)}
+
+The balls \(B_r(x)\) are open.
+\end{definition}
+
+\begin{definition}[Interior, limit, discrete points]
+If $A\subset M$, then a point $x\in A$ is called \rec{\bol{interior point}} of $A$ if 
+\[B_r(x)\subset A\te{ for some }r>0.\]
+$A^\circ:=$ interior points of A.\vspace{1mm}\\
+$x\in M$ is a \rec{\bol{limit point}} (of $A$) if 
+\[\left(B_r(x)\setminus\{x\}\right)\cap A\neq\emptyset\te{ for all }r>0.\]
+$A_l:=$ set of limit points of $A$.\vspace{1mm}\\
+$A_d:=A\setminus A_l$ are the \bol{\rec{discrete points}} of $A$.
+\end{definition}
+
+\begin{definition}[Convergence]
+A sequence $(x_n)_n$ in a metric space $(M,d)$ \bol{converges} to $x\in M$ if
+\[\forall\varepsilon>0\,\exists N\in\N\,\forall n\geq N:\, d(x_n,x)<\varepsilon.\]
+We write $x_n\rarr x$ or $\limn x_n=x$.\\
+A sequence $(x_n)_n$ in a metric space $(M,d)$ is a \bol{Cauchy sequence} if
+\[\forall\varepsilon>0\,\exists N\in\N\,\forall n,m\geq N:\,d(x_n,x_m)<\varepsilon.\]
+A metric space $(M,d)$ is \bol{complete} if every Cauchy sequence in $M$ converges.
+\end{definition}
+
+\begin{lem}[Characterizing limit and discrete points]
+\begin{enumerate}[label=\alph*)]
+    \item \label{i.7.a}$x\in A_l\Lolrarr\exists\te{sequ. }(x_n)_n\subset A:\, x_n\neq x,x_n\rarr x$.\label{1.7.a}
+    \item $x\in A_d\Lolrarr\exists r>0:\, B_r(x)\cap A=\{x\}$.\label{1.7.b}
+    \item $x\notin A_l\Lolrarr x\in (A^c)^\circ\te{ or }x\in A_d$.\label{1.7.c}
+\end{enumerate}
+\end{lem}
