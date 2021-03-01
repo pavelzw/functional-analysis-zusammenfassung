@@ -1,0 +1,42 @@
+\section{The Baire Category Theorem}
+
+\begin{definition}\label{v.1}
+	Let $(M,d)$ be a metric space. We say
+	\begin{enumerate}[label=\alph*)]
+		\item $F\subset M$ is \bol{nowhere dense}\index{nowhere dense}, if $\overline{F}$ has empty interior, i.e.,\label{v.1.a} $(\overline{F})^\circ=\emptyset$.
+		
+		\item $F\subset M$ is \bol{meager}\index{meager} \rec{(}or of \bol{first category}\rec{)} if there is a sequence $(F_n)_n$ of\label{v.1.b} nowhere dense sets $F_n\subset M$ with
+		\[F=\cupp_{n\in\N} F_n.\]
+		\rec{(}i.e., $F$ is the countable union of nowhere dense sets\rec{)}.
+		
+		\item $F$ is \bol{fat}\index{fat} \rec{(}or of \bol{second category}\rec{)} if $F$ is not meager.
+	\end{enumerate}
+\end{definition}
+
+\begin{thm}[Baire]\label{v.2}\index{Baire}
+	Let $(M,d)$ be a complete metric space. Then
+	\begin{enumerate}[label=\alph*)]
+		\item A meager subset $F$ of $M$ has empty interior \label{v.2.a}\rec{(}i.e., if $F=\cupp_{n\in\N}F_n$, $F_n$ nowhere dense then $F^\circ=\rec{int}(F)=\emptyset$\rec{)}.
+		\item \label{v.2.b} If for $n\in\N,O_n\subset M$ is open and dense in $M$, then
+		\[\G:=\capp_{n\in\N}O_n\te{ is dense in }M.\tag{5.1}\label{5.1}\]
+	\end{enumerate}
+\end{thm}
+
+\paragraph{Remark}
+A set $\G\subset M$ is a \rec{\bol{$\G_\delta$(-set)}} if there exist open sets $O_n\subset M$ with \[\G=\capp_{n\in\N}O_n.\]
+If $\G_n$ is a $\G_\delta$-set, $n\in\N$, then $\G_n=\capp_{m\in\N}O_{n,m}$, $O_{n,m}\subset M$ open $\Lorarr\capp_{n\in\N}\G_n=\capp_{n,m\in\N}O_{n,m}$ so a countable intersection of $\G_\delta$ sets is a $\G_\delta$ set. This and part \ref{v.2.b} of Theorem \ref{v.2} (Baire) imply
+
+\begin{cor}\label{v.3}
+	A countable intersection of dense $\G_\delta$ sets in a complete metric space is a dense $\G_\delta$ set.
+\end{cor}
+
+\begin{cor}\label{v.4}
+	Every dense $\G_\delta$ set in a complete metric space with no isolated points is uncountable.
+\end{cor}
+
+\paragraph{Example}
+From measure theory we are used to saying that a property $A(x)$ holds almost everywhere (w.r.t. a measure $\mu$), if there exists a measurable set $N$ with $\mu(N)=0$ such that $A(x)$ is true $\forall x\in N^C$.
+
+Similarly one can say that $A(x)$ is \rec{\bol{Baire generic}} if $A(x)$ is true for all $x$ in a dense $\G_\delta$ set $\G$. These are very different notions. 
+
+\[\te{There exists a dense $\G_\delta$ set in $[0,1]$ which has zero Lebesgue measure}\]
