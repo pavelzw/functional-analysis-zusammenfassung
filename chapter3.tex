@@ -1,0 +1,28 @@
+\section{Hahn-Banach Theorems}
+\subsection{Hahn-Banach Theorems}
+
+\begin{definition}\label{iii.1}
+    Let $X,Y$ be normed spaces. Then 
+    \[L(X,Y):=\{\TXY\colon T\te{ is linear and continuous}\}\]
+    where we define addition and multiplication by scalar as usual for functions:
+    \[(S+T)(x):=S(x)+T(x)=Sx+Tx\]
+    \[(\lambda T)(x)=\lambda Tx,\]
+    is a vector space.
+\end{definition}
+
+\begin{prop}\label{iii.2}
+    $L(X,Y)$ is a normed vector space with the operator norm $\|T\|_{X\rarr Y}$. 
+    
+    Moreover, if $Y$ is a Banach space \rec{(}i.e., a complete normed vector space\rec{)}, then $L(X,Y)$ is also complete w.r.t. the operator norm $\|\cdot\|_{X\rarr Y}$, that is, $(L(X,Y),\|\cdot\|_{X\rarr Y})$ is a Banach space if $(Y,\|\cdot\|_Y)$ is a Banach space.
+\end{prop}
+
+\begin{definition}\label{iii.3}
+    Given a normed space $X$, we define its \bol{dual space}\index{dual space} $X^*:=L(X,\K)$ of continuous linear functionals
+    \rec{(}$\K=\R$ or $\C$, if $X$ is a real or complex vector space\rec{)}.
+\end{definition}
+
+\begin{cor}\label{iii.4}
+    For any normed space $X$, its dual space $X^*$ equipped with the dual norm \rec{(}the operator norm for $Y=\K$\rec{)}
+    \[\|\ell\|_{X^*}=\sup_{\|x\|_X\leq 1}|\ell(x)|=\sup_{\|x\|_X=1}|\ell(x)|=\sup_{\substack{x\in X\\x\neq0}}\frac{|\ell(x)|}{\|x\|_X}\]
+    is a Banach space.
+\end{cor}

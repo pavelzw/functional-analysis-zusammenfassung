@@ -87,7 +87,8 @@ Recall that a subset $A\subset V$ is \rec{\bol{convex}}\index{convex} if
 \end{figure}
 
 The \bol{\rec{convex hull}}\index{convex!hull} of $A\subset V$ is defined to be
-\[\conv(A):=\bigg\{\hspace{-8mm}\underbrace{\sum_{j=1}^ka_jx_j}_{\scriptsize\te{convex linear combination}}\hspace{-8mm}\colon k\in\N,\ x_1,\ldots,x_k\in A,\ a_j\geq0,\ \sum_{j=1}^ka_j=1\bigg\}.\]
+\[ \conv(A):=\bigg\{\hspace{-8mm}\underbrace{\sum_{j=1}^ka_jx_j}_{\scriptsize\te{convex linear combination}}
+\hspace{-8mm}\colon k\in\N,\ x_1,\ldots,x_k\in A,\ a_j\geq0,\ \sum_{j=1}^ka_j=1\bigg\}.\]
 
 Note that $A$ is convex $\Lolrarr\conv(A)=A$. If $A\subset V$ is convex, then a function 
 $\func{f}{A}{\R\cup\{\infty\}}$ is \bol{\rec{convex}} if 
@@ -96,7 +97,7 @@ $\func{f}{A}{\R\cup\{\infty\}}$ is \bol{\rec{convex}} if
 A function $\func{f}{A}{\R\cup\{-\infty\}}$ is \bol{\rec{concave}} if $-f$ is convex. 
 If $\func{f}{V}{\R\cup\{\infty\}}$ is convex, then the set $\{x\in V\colon f(x)\in\R\}$ is convex 
 in $V$ and $B=\{(x,\alpha)\in V\times\R\colon \alpha\geq f(x)\}$ is convex in $V\times\R$.
-
+\renewcommand{\H}{\mathscr{H}}
 \begin{thm}[Projection theorem]\label{ii.7}\index{Projection theorem}
     Let $\H$ be a Hilbert space and $A\subset\H$ not empty, closed and convex subset. 
     Then there exists exactly one map
@@ -283,17 +284,19 @@ countable (at most).
 \[\sum_{n\in\N}x_n=\sum_{n\in\N}x_{\sigma(n)}.\tag{2.42}\label{2.42}\]
 
 \subsection{The Fourier map and Gram-Schmidt orthogonalization}
+Given a Hilbert space $\H$ and an orthonormal System $\{e_\alpha\}_{\alpha\in J}$ consider the map
+\[\F\colon\H\ni x\mapsto\left(\scal{e_\alpha}{x}\right)_{\alpha\in J}.\tag{2.44}\label{2.44}\]
 \begin{thm}\label{ii.20}
-	Let $(e_\alpha)_{\alpha\in J}$ be an orthonormal system in a Hilbert space $\H$. Then the following are equivalent
-	\begin{enumerate}[label=\alph*)]
-		\item $x=\sum_{\alpha\in J}\scal{e_\alpha}{x}e_\alpha\;\;\;\;\;\forall x\in\H$.\label{ii.20.a}
-		\item For all $x\in\H$ \bol{Parseval's equation}\index{Parseval's equation} holds
-		\[\|x\|^2=\sum_{\alpha\in J}|\scal{e_\alpha}{x}|^2.\tag{2.45}\label{2.45}\]\label{ii.20.b}
-		\item The Fourier map $\func{\F}{\H}{\ell^2(J)}$ given by \eqref{2.44} is isometric.\label{ii.20.c}
-		\item The linear hull $\te{\rec{span}}(e_\alpha\colon{\alpha\in J})$ is dense in $\H$.\label{ii.20.d}
-		\item The Fourier map $\func{\F}{\H}{\ell^2(J)}$ is injective.\label{ii.20.e}
-		\item The orthonormal system $(e_\alpha)_{\alpha\in J}$ is maximal \emph{(}i.e., an orthonormal base\emph{)}.\label{ii.20.f}
-	\end{enumerate}
+    Let $(e_\alpha)_{\alpha\in J}$ be an orthonormal system in a Hilbert space $\H$. Then the following are equivalent
+    \begin{enumerate}[label=\alph*)]
+        \item $x=\sum_{\alpha\in J}\scal{e_\alpha}{x}e_\alpha\;\;\;\;\;\forall x\in\H$.\label{ii.20.a}
+        \item For all $x\in\H$ \bol{Parseval's equation}\index{Parseval's equation} holds
+        \[\|x\|^2=\sum_{\alpha\in J}|\scal{e_\alpha}{x}|^2.\tag{2.45}\label{2.45}\]\label{ii.20.b}
+        \item The Fourier map $\func{\F}{\H}{\ell^2(J)}$ given by \eqref{2.44} is isometric.\label{ii.20.c}
+        \item The linear hull $\te{\rec{span}}(e_\alpha\colon{\alpha\in J})$ is dense in $\H$.\label{ii.20.d}
+        \item The Fourier map $\func{\F}{\H}{\ell^2(J)}$ is injective.\label{ii.20.e}
+        \item The orthonormal system $(e_\alpha)_{\alpha\in J}$ is maximal \emph{(}i.e., an orthonormal base\emph{)}.\label{ii.20.f}
+    \end{enumerate}
 \end{thm}
 
 \begin{cor}\label{ii.21}
