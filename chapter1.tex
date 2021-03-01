@@ -2,7 +2,7 @@
 
 \subsection{Metrics and norms}
 
-\begin{definition}[Metric]
+\begin{definition}[Metric]\label{i.1}
 Let $M$ be a set. A \bol{metric} $d$ "on $M$" is a function $\func{d}{M\times M}{\R}$ with the properties
 \begin{enumerate}
 \item $d(x,y)\geq0$ for all $x,y\in M$
@@ -14,7 +14,7 @@ If $2.$ does not hold, $d$ is called \bol{semi-metric} or \bol{pseudo-metric}.
 We write $(M,d)$ for a metric space, or just $M$.
 \end{definition}
 
-\begin{definition}[Normed linear space]
+\begin{definition}[Normed linear space]\label{i.2}
 A \bol{normed linear space} $V$ over $\K$ \emph{(}$\K=\R$ or $\C$\emph{)} is a vector space $V$ 
 with a real-valued function $\func{\|\cdot\|}{V}{\R_{\geq0}}$ \emph{(}the \bol{norm}\emph{)} such that
 \begin{enumerate}
@@ -36,7 +36,7 @@ where $\inf\emptyset:=\infty$, i.e. $d(A,\emptyset)=\infty$. Then $d(\{x\},\{y\}
 for $x\in M$ and $A\subset M$ as the \rec{\bol{distance from $x$ to $A$}} (or from $A$ to $x$).
 \end{definition*}
 
-\begin{definition}[Open balls]
+\begin{definition}[Open balls]\label{i.3}
 For $x\in M$, $r>0$ we define 
 \[B_r(x):=\{y\in M:\,d(x,y)<r\}\]
 as the \bol{open ball of radius $r$ around $x$}. Moreover, if $A\subset M$, we set
@@ -44,7 +44,7 @@ as the \bol{open ball of radius $r$ around $x$}. Moreover, if $A\subset M$, we s
 as the \bol{$r$ neighborhood of $A$}\index{neighborhood}. So $B_r(x)=B_r(\{x\})$. 
 \end{definition}
 
-\begin{definition}[Open/closed sets]
+\begin{definition}[Open/closed sets]\label{i.5}
 A set $O\subset M$ is \bol{open} if
 \[\forall x\in O\,\exists r>0:\,B_r(x)\subset O.\]
 A set $A\subset M$ is \bol{closed} if $A^c=M\setminus A=\{x\in M:\, x\notin A\}$ is open. 
@@ -63,7 +63,7 @@ $A_l:=$ set of limit points of $A$.\vspace{1mm}\\
 $A_d:=A\setminus A_l$ are the \bol{\rec{discrete points}} of $A$.
 \end{definition}
 
-\begin{definition}[Convergence]
+\begin{definition}[Convergence]\label{i.6}
 A sequence $(x_n)_n$ in a metric space $(M,d)$ \bol{converges} to $x\in M$ if
 \[\forall\varepsilon>0\,\exists N\in\N\,\forall n\geq N:\, d(x_n,x)<\varepsilon.\]
 We write $x_n\rarr x$ or $\limn x_n=x$.\\
@@ -72,10 +72,170 @@ A sequence $(x_n)_n$ in a metric space $(M,d)$ is a \bol{Cauchy sequence} if
 A metric space $(M,d)$ is \bol{complete} if every Cauchy sequence in $M$ converges.
 \end{definition}
 
-\begin{lem}[Characterizing limit and discrete points]
+\begin{lem}[Characterizing limit and discrete points]\label{i.7}
 \begin{enumerate}[label=\alph*)]
     \item \label{i.7.a}$x\in A_l\Lolrarr\exists\te{sequ. }(x_n)_n\subset A:\, x_n\neq x,x_n\rarr x$.\label{1.7.a}
     \item $x\in A_d\Lolrarr\exists r>0:\, B_r(x)\cap A=\{x\}$.\label{1.7.b}
     \item $x\notin A_l\Lolrarr x\in (A^c)^\circ\te{ or }x\in A_d$.\label{1.7.c}
 \end{enumerate}
 \end{lem}
+
+\begin{lem}\label{i.8}
+It is easy to see that
+\[A^\circ=\cupp\{O:\,O\te{ is open and }O\subset A\}.\]
+We also define
+\[\overline{A}:=\capp\{C:\, C\te{ is closed and }A\subset C\},\]
+which is closed and hence the smallest closed set containing $A$. 
+We call this the \bol{\rec{closure of $A$}}.
+
+$\overline{A}=A_l\cup A_d$.
+\end{lem}
+
+\begin{thm}\label{i.9}
+Let $(M,d)$ be a metric space. Then $A\subset M$ is closed iff it is sequentially closed, 
+that is, for any sequence $(x_n)_n\subset A$ which converges in $M$, we have $x=\limn x_n\in A$.
+\end{thm}
+
+\paragraph{Remarks}
+Let $(M,d)$ be a metric space. Then
+\begin{enumerate}[label=\alph*)]
+    \item $M$ and $\emptyset$ are open.\label{p.1.a}
+    \item \rec{Arbitrary unions} of open sets are open.\label{p.1.b}
+    \item \rec{Finite intersections} of open sets are open.\label{p.1.c}
+\end{enumerate}
+Moreover
+\begin{enumerate}[label=\alph*')] 
+    \item $M$ and $\emptyset$ are closed.\label{p.2.a}
+    \item \rec{Finite unions} of closed sets are closed.\label{p.2.b}
+    \item \rec{Arbitrary intersections} of closed sets are closed.\label{p.2.c}
+\end{enumerate}
+
+\begin{lem}\label{i.10}
+    A closed subset $A$ of a complete metric space $M$ is complete.
+\end{lem}
+
+\paragraph{Notation:}
+$A\subset M$ is \bol{\rec{dense}} in $M$, if $\overline{A}=M$.\\
+A metric space is \rec{\bol{separable}} if it has a countable dense subset.
+
+\begin{lem}\label{i.11}
+Let $(M,d)$ be a separable metric space. Then any subset $A\subset M$ is also seperable.
+\end{lem}
+
+\subsection{Continuity and a little bit more topology}
+
+\begin{definition}\label{i.12}
+    Given metric spaces $(X,d_X),(Y,d_Y)$, a set $A\subset X$ and a function $\func{f}{A}{Y}$, we say that $f$ is \bol{continuous} at $x\in A$ if
+    \[\forall\varepsilon>0\,\exists\delta>0\,\forall y\in A: d_Y(f(x),f(y))<\varepsilon\te{ if }d_X(x,y)<\delta.\label{1.1}\tag{1.1}\]
+    If $f$ is continuous at any point $x\in A$, then we say that $f$ is continuous.
+    We say that $f$ is \bol{sequentially continuous} at $x\in A$ if
+    \[f(x_n)\rarr f(x)\te{ for any sequence }\xn\subset A,\,x_n\rarr x.\label{1.2}\tag{1.2}\]
+\end{definition}
+
+\begin{lem}\label{i.13}
+    The following are equivalent
+    \begin{enumerate}[label=\alph*)]
+        \item $f$ is continuous at $x$ \emph{(}\eqref{1.1} holds\emph{)}.\label{1.13.a}
+        \item $f$ is sequentially continuous at $x$ \emph{(}\eqref{1.2} holds\emph{)}.\label{1.13.b}
+        \item For every neighborhood $V$ of $f(x)$ \emph{(}in $Y$\emph{)} $f^{-1}(V)$ is a neighborhood of $x$ \emph{(}in $A$\emph{)}.\label{1.13.c}
+    \end{enumerate}
+\end{lem}
+
+\paragraph{Remarks}
+\begin{itemize}
+    \item We say that $V$ is a \rec{\bol{neighborhood}} of $y\in Y$, if $\exists\delta>0: B_\delta(y)\subset V$.
+    \item Since $(A,d_X)$ is a metric space, we can assume $A=X$ wlog.
+\end{itemize}
+
+\begin{cor}\label{i.14}
+    Let $(X,d_X),(Y,d_Y)$ be metric spaces. Then $\func{f}{X}{Y}$ is continuous iff $f^{-1}(V)$ is open in $X$ for any open set $V\subset Y$.
+\end{cor}
+
+\begin{definition}\label{i.15}
+    Let $(X,\OO)$ be a topological space and $A\subset X$. An \bol{open cover} of $A$ is a family $(U_j)_{j\in J}$ of open sets $U_j\in\OO$, such that
+    \[A\subset\bigcup_{j\in J}U_j\label{1.3}\tag{1.3}\]
+\end{definition}
+
+\begin{definition}\label{i.16}
+    Let $(X,\OO)$ be a topological space. A subset $K\subset X$ is \bol{compact} if every open cover of $K$ has a finite subcover. 
+\end{definition}
+
+\begin{definition}\label{i.17}
+    Let $(M,d)$ be a metric space. Then $A\subset X$ is \bol{sequentially compact} if every sequence in $A$ has a convergent subsequence, whose limit is also in $A$.
+\end{definition}
+
+\begin{definition}\label{i.18}
+    Let $(M,d)$ be a metric space. Then $A\subset X$ is \bol{totally bounded}\index{totally bounded}, if for every $\varepsilon>0$, $A$ has a finite cover by $\varepsilon$-balls, i.e.
+
+    \[\forall\varepsilon>0\,\exists n_\varepsilon\in\N,x_1,\ldots,x_{n_\varepsilon}\in X:\, A\subset\bigcup_{j=1}^{n_\varepsilon}B_\varepsilon(x_j).\]
+\end{definition}
+
+\begin{thm}[compactness in metric spaces]\label{i.19}
+    For any subset $A\subset M$ of a metric space $(M,d)$, the following are equivalent
+    \begin{enumerate}[label=\alph*)]
+        \item $A$ is compact \emph{(}the topological version from Definition \ref{i.15}\emph{)}.\label{1.19.a}
+        \item $A$ is sequentially compact \emph{(}Definition \ref{i.16}\emph{)}.\label{1.19.b}
+        \item $(A,d)$ is complete and totally bounded \emph{(}Definition \ref{i.17}\emph{)}.\label{1.19.c}
+    \end{enumerate}
+
+    $\ref{1.19.a}\Rarr \ref{1.19.b}$ holds in any topological space.
+\end{thm}
+
+\begin{lem}[Urysohn]\label{i.20}\index{Urysohn}
+    Let $A_1,A_2$ be two disjoint closed subsets of a metric space $(M,d)$. 
+    Then there exists a continuous function $\func{f}{M}{[0,1]}$ such that $f|_{A_1}=0$ and $f|_{A_2}=1$.
+\end{lem}
+
+\subsection{Some standard examples of complete metric spaces}
+
+\begin{lem}\label{i.21}
+    Let $1\leq p\leq\infty$. Then $(\ell^p(\N),\|\cdot\|_p)$ is a normed vector space.
+\end{lem}
+
+\begin{lem}[Hölder inequality]\label{i.22}\index{Hölder inequality}
+    Let $1\leq p\leq\infty$ and define the dual exponent $q\in[1,\infty]$ by
+    \[q=\begin{cases}\infty,&\te{if }p=1\\1,&\te{if }p=\infty\\\frac{p}{p-1},&\te{if }1<p<\infty\end{cases}\label{1.11}\tag{1.11}\]
+    i.e. such that $\frac{1}{\infty}=0$ and $\frac{1}{0}=\infty$ and such that $\frac{1}{p}+\frac{1}{q}=1$ for $1<p,q<\infty$. We have $\frac{1}{p}+\frac{1}{q}=1$ for all $1\leq p\leq\infty$. Then if $a\in\ell^p(\N)$, $b\in\ell^q(\N)$ and the sequence $ab$ is defined by $(ab)_n:=a_nb_n$, $n\in\N$, then
+    \[ab\in\ell^1\te{ and }\|ab\|_1\leq\|a\|_p\|b\|_q.\tag{1.12}\label{1.12}\]
+\end{lem}
+
+\paragraph{Remark:}
+The inequality
+\[\|a+b\|_p\leq\|a\|_p+\|b\|_p\]
+is called \rec{Minkowski's inequality}. It remains to prove Hölder's inequality.
+
+\begin{lem}[Young's inequality]\label{i.23}\index{Young's inequality}
+    Let $1<p<\infty$. Then for all $t,s\geq0$
+    \[ts\leq\frac{1}{p}t^p+\frac{1}{q}s^q\label{1.15}\tag{1.15},\]
+    where $\frac{1}{p}+\frac{1}{q}=1$.
+\end{lem}
+
+\begin{thm}\label{i.24}
+    The normed vector spaces $\ell^p(\N)$ with norms $\|\cdot\|_p$, $1\leq p\leq\infty$ are complete, 
+    i.e. they are Banach spaces.
+\end{thm}
+
+\subsection{Completion of a metric space}
+
+\begin{definition}\label{i.25}
+    Let $(M,d_M)$ and $(N,d_N)$ be metric spaces. A function $\func{f}{M}{N}$ is an \bol{isometry} if
+    \[d_N(f(x),f(y))=d_M(x,y)\;\;\;\forall x,y\in M.\]
+\end{definition}
+
+\begin{definition}\label{i.26}
+    A complete metric space $(N,d_N)$ is called a \bol{completion}\index{completion} 
+    of a metric space $(M,d_M)$ if there exists an isometry $\fmn$ such that
+    \[f(M)=R(f)=\{y\in N\colon \exists x\in M\te{ with }y=f(x)\}\]
+    is dense in $N$. That is, $\overline{f(M)}=N.$
+\end{definition}
+
+\paragraph{Fact:}
+Any isometry is \rec{uniformly continuous}
+
+Recall: $\func{g}{M}{N}$ is uniformly continuous, if
+\[\forall\varepsilon>0\,\exists\delta>0\colon x,y\in M\te{ and }d_M(x,y)<\delta\te{ implies }d_N(g(x),g(y))<\varepsilon\]
+which is stronger than continuity.
+
+\begin{thm}\label{i.27}
+    Every metric space $(M,d_M)$ has a unique \rec{(}up to isometries\rec{)} completion.
+\end{thm}
