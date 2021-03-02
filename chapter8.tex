@@ -1,0 +1,61 @@
+\section{Reflexive Banach spaces: Weak convergence II}
+
+We can always "think of" $X\subset X^{**}$ using the canonical injection
+\[\func{J}{X}{X^{**}},\;\;x\mapsto J(x):=\xi_x\tag{8.1}\label{8.1}\]
+where for a given $x\in X$, $\xi_x\in X^{**}$ is defined by
+\[\xi_x(\ell):=\ell(x)\;\;\;\forall\ell\in X^*.\tag{8.2}\label{8.2}\]
+We already showed that $J$ is an isometric injection of $X$ into $X^{**}$. ($J$ is always injective)
+
+\begin{definition}\label{viii.1}
+    A Banach space $X$ is called \bol{reflexive}\index{reflexive} if the above canonical injection $\func{J}{X}{X^{**}}$ is surjective.
+    
+    \rec{(}So $X$ reflexive $\Lolrarr J$ is surjective\rec{)}
+\end{definition}
+
+\begin{lem}\label{viii.2}\ 
+    \begin{enumerate}[label=\alph*)]
+        \item \label{viii.2.a}If $X$ is reflexive, then every closed subspace of $X$ is reflexive.
+        \item \label{viii.2.b}Is $\TXY$ an isomorphism of the Banach spaces $X,Y$ then
+        \[X\te{ is reflexive }\Lolrarr Y\te{ is reflexive}.\tag{8.3}\label{8.3}\]
+        \item \label{viii.2.c}
+        \[X\te{ is reflexive }\Lolrarr X^*\te{ is reflexive}.\tag{8.4}\label{8.4}\]
+    \end{enumerate}
+\end{lem}
+
+\begin{lem}\label{viii.3}
+    For any Banach space $X$ we have
+    \[X^*\te{ separable }\Lorarr X\te{ is separable.}\]
+\end{lem}
+
+\rec{Warning:} The reverse implication is, in general, wrong.
+
+Example: $X=L^1(\mu)$, $\mu$ a (regular) measure. e.g. $L^1(0,1)$ with Lebesgue measure. (then $L^1(0,1)^*=L^\infty(0,1)$ which is not separable)
+
+\begin{thm}\label{viii.4}
+    Let $X$ be a reflexive Banach space. Then the closed unit ball $\overline{B_1(0)}$ is weakly sequentially compact.
+\end{thm}
+
+\paragraph{Remark}
+Using translations and dilations, this shows that any closed ball $\overline{B_R(x_0)}$ is weakly sequentially compact.
+
+\rec{Warning:} The unit sphere $\S=\{\|x\|=1\}$ is not weakly sequentially compact. But closed, bounded and convex sets are weakly sequentially compact.
+
+\begin{thm}[convex closed sets are weakly closed]\label{viii.5}
+    Let $X$ be a normed space and $K\subset X$ convex and closed \rec{(}w.r.t. the norm in $X$\rec{)}. Then $K$ is weakly sequentially closed, that is, for $\xn\subset X$, $x\in X$ we
+    \[x_n\weak x\te{ \rec{(}weakly in }X\te{\rec{)} and }\xn\subset K\Lorarr x\in K.\]
+\end{thm}
+
+\begin{lem}[Lemma of Mazur]\label{viii.6}\index{Lemma of Mazur}
+    Let $\xn$ be a bounded sequence in a normed space $X$ which converges weakly to $x$. Then
+    \[x\in\overline{\rec{conv}(x_n\colon n\in\N)}\;\;\;\te{\scriptsize\rec{(}abstract closure\rec{)}}\]
+    where $\rec{conv}(A)$ is the convex hull of the set $A$:
+    \[\rec{conv}(A):=\Big\{\sum_{j=1}^N\alpha_jx_j\colon N\in\N,x_j\in A,0\leq\alpha_j\leq1,j=1,\ldots,N,\sum_{j=1}^N\alpha_j=1\Big\}.\]
+\end{lem}
+
+\paragraph{Remark}
+This means that there is a sequence of convex combinations of $\xn$ which converges strongly to $x$.
+
+\begin{thm}\label{viii.7}
+    Let $X$ be a reflexive Banach space, $K\subset X$ not empty, closed and convex. Then for any $x_0\in X$, there exists $x\in K$ such that
+    \[\|x-x_0\|=\rec{dist}(x_0,K).\]
+\end{thm}

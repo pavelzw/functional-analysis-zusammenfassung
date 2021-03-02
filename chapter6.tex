@@ -1,0 +1,141 @@
+\section{Applications of Baire's theorem in functional analysis}
+\subsection{Banach Steinhaus and consequence}
+
+\begin{thm}[Uniform boundedness principle, Banach-Steinhaus]\label{vi.1}\index{Uniform boundedness principle, Banach-Steinhaus}
+    Let $X$ be a Banach space and $Y$ be a normed vector space and 
+    \[\F\subset L(X,Y)\]
+    i.e., $\F$ is a subset of the bounded linear maps from $X$ to $Y$. Suppose that for each $x\in X$
+    \[\sup_{T\in\F}\|Tx\|_Y<\infty,\tag{6.3}\label{6.3}\]
+    then
+    \[\sup_{T\in\F}\|T\|_{X\rarr Y}<\infty.\tag{6.4}\label{6.4}\]
+\end{thm}
+Note that the contraposition of Theorem \ref{vi.1} says
+\[\te{If }\sup_{T\in\F}\|T\|_{X\rarr Y}=\infty\]
+then for some $x\in X$
+\[\sup_{T\in\F}\|Tx\|_Y=\infty.\]
+
+\begin{thm}[Strong contrapositive of Banach-Steinhaus]\label{vi.2}\index{strong contrapositive of Banach-Steinhaus}
+    Let $\F\subset L(X,Y)$, $X$ Banach space, $Y$ normed vector space. If
+    \[\sup_{T\in\F}\|T\|_{X\rarr Y}=\infty\tag{6.6}\label{6.6}\]
+    then
+    \[\{x\in X\colon\sup_{T\in\F}\|Tx\|_Y<\infty\}\tag{6.7}\label{6.7}\]
+    is meager, i.e., a countable union of nowhere dense sets.
+    $\big($equivalently: $\{x\in X\colon\sup_{T\in\F}\|Tx\|_Y=\infty\}$ is a dense $\G_\delta.\big)$
+\end{thm}
+
+\begin{cor}\label{vi.3}
+    Let $X,Y$ be Banach spaces, $(T_n)_n\subset L(X,Y)$ s.t. $\forall x\in X$ $(T_nx)_n$ is Cauchy in $Y$, and let $Tx:=\limn T_nx$. Then
+    \begin{enumerate}[label=\alph*)]
+        \item $\sup\limits_{n\in\N}\|T_n\|_{X\rarr Y}<\infty$.\label{vi.3.a}
+        \item $T\in L(X,Y)$.\label{vi.3.b}
+        \item $\|T\|_{X\rarr Y}\leq\liminfn\|T_n\|_{X\rarr Y}$.\label{vi.3.c}
+    \end{enumerate}
+\end{cor}
+
+\begin{cor}\label{vi.4}
+    Let $X$ be a normed vector space and $B\subset X$ a subset. Then 
+    the following statements are equivalent:
+    \begin{enumerate}[label=\alph*)]
+        \item \label{vi.4.a}$B$ is bounded \rec{(}in $X$\rec{)}.
+        \item \label{vi.4.b}For all $\ell\in X^*$ the set 
+        \[\ell(B):=\{\ell(x)\colon x\in B\}\]
+        is a bounded subset of the real or complex numbers.
+    \end{enumerate}
+\end{cor}
+
+\begin{definition}\label{vi.5}
+    Let $X$ be a normed vector space. A sequence $(x_n)_n\subset X$ \bol{converges weakly}\index{convergence!weakly} to $x$ if 
+    \[\limn\ell(x_n)=\ell(x)\;\;\;\forall\ell\in X^*.\tag{6.8}\label{6.8}\]
+    We write \(x_n \rightharpoonup x\).
+\end{definition}
+
+\begin{cor}\label{vi.6}
+    Weakly convergent sequences are bounded.
+\end{cor}
+
+\begin{cor}\label{vi.7}
+    Let $X$ be a Banach space and $\widetilde{B}\subset X^*$. Then the following statements 
+    are equivalent:
+    \begin{enumerate}[label=\alph*)]
+        \item \label{vi.7.a}For all $x\in X$, the set
+        \[\widetilde{B}(x):=\{\ell(x)\colon\ell\in\widetilde{B}\}\]
+        is a bounded subset of $\R$ or $\C$.
+        
+        \item $\widetilde{B}$ is bounded \rec{(}in $X^*$\rec{)}.
+    \end{enumerate}
+\end{cor}
+
+\subsection{The open mapping and closed graph theorems}
+\begin{thm}[Open mapping theorem]\label{vi.8}\index{Open mapping theorem}
+    Let $X,Y$ be Banach spaces and $T\in L(X,Y)$. If T is \bol{surjective}, that is
+    \[R(T)=\{Tx\colon x\in X\}=Y,\]
+    then $T$ is \bol{open}, that is
+    \[\te{for all open sets }A\subset X,\, T(A)\subset Y\te{ is open \rec{(}in }Y\te{\rec{)}.}\]
+\end{thm}
+
+\begin{cor}\label{vi.9}
+    Let $\TXY$ be an injective continuous linear map between the Banach spaces $X,Y$ and assume that $R(T)$ is closed in $Y$. Then there exists a $\rho>0$ such that
+    \[\|Tx\|_Y\geq\rho\|x\|_X\;\;\;\forall x\in X.\]
+\end{cor}
+
+\begin{thm}[Inverse mapping theorem]\label{vi.10}\index{Inverse mapping theorem}
+    Let $X,Y$ be Banach spaces and $\TXY$ a continuous linear bijection. Then $\func{T^{-1}}{Y}{X}$ is continuous.
+\end{thm}
+
+\begin{cor}[Norm equivalence]\label{vi.11}\index{Norm equivalence}
+    Let $X$ be a vector space and $\|\cdot\|_1,\|\cdot\|_2$ two norms in which $X$ is a Banach space. If there is a $C_1<\infty$ such that
+    \[\|x\|_1\leq C_1\|x\|_2\;\;\;\forall x\in X\]
+    then there exists $C_2<\infty$ such that
+    \[\|x\|_2\leq C_2\|x\|_1\;\;\;\forall x\in X.\]
+    \rec{(}i.e., the two norms are equivalent\rec{)}
+\end{cor}
+
+\begin{cor}\label{vi.12}
+    If $X$ is any vector space, two subspaces $X_1,X_2$ are called \bol{\rec{complementary}} if 
+    \[X_1+X_2=X\te{ and }X_1\cap X_2=\{0\} \quad (X = X_1 \oplus X_2).\]
+    Equivalently, any $x\in X$ can be uniquely written as
+    \[x=x_1+x_2,\;\;x_1\in X_1,x_2\in X_2.\]
+
+    Let $X$ be a Banach space and $X_1,X_2$ complementary subspaces and each $X_1,X_2$ is closed \rec{(}in $X$\rec{)}. Then there exists $\delta>0$ such that for all $x_1\in X_1,x_2\in X_2$ we have 
+    \[\delta(\|x_1\|+\|x_2\|)\leq\|x_1+x_2\|\leq\|x_1\|+\|x_2\|\tag{6.19}\label{6.19}\]
+    where $\|\cdot\|$ is the norm on $X$. $\big($Equivalently: the direct sum norm on $X_1\oplus X_2$ is equivalent to $\|\cdot\|\big)$
+\end{cor}
+
+\begin{definition}\label{vi.13}
+    The \bol{direct sum} $X_1\oplus X_2$ of the Banach spaces $X_1,X_2$ is given by the tuples
+    \[X_1\oplus X_2:=\{(x_1,x_2)\colon x_1\in X_1,x_2\in X_2\}=X_1\times X_2\]
+    with norm
+    \[\|x\|_{X_1\oplus X_2}:=\|x_1\|_{X_1}+\|x_2\|_{X_2}.\]
+    The \bol{graph} $\Gamma(T)$ of a linear map $\TXY$ is the subset of $X\oplus Y$ given by
+    \[\Gamma(T):=\{(x,Tx)\colon x\in X\}\subset X\oplus Y=X\times Y.\]
+    This is always a subspace of $X\oplus Y$, even if $T$ is not necessarily continuous \rec{(}but linear, of course\rec{)}.
+\end{definition}
+
+\begin{thm}[Closed graph theorem]\label{vi.14}\index{Closed graph theorem}
+    Let $\TXY$ be linear \rec{(}but not necessarily bounded\rec{)}, $X,Y$ Banach spaces. If the graph $\Gamma(T)$ is closed in $X\oplus Y$ then $T$ is a bounded linear map from $X$ to $Y$.
+\end{thm}
+
+\paragraph{Remark}
+If $\TXY$ is linear and bounded, then $Tx_n\lorarr Tx$ whenever $x_n\lorarr x$ in $X$. Consider the following 3 statements for a sequence $\xn\subset X$.
+\begin{enumerate}[label=\alph*)]
+    \item $x_n\lorarr x$.\label{vi.remark.1.a}
+    \item $y_n:=Tx_n$ has a limit $y$.\label{vi.remark.1.b}
+    \item $y=Tx$.\label{vi.remark.1.c}
+\end{enumerate}
+Then $\TXY$ is continuous iff 
+\[\te{\ref{vi.remark.1.a}}\Lorarr\te{\ref{vi.remark.1.b} and \ref{vi.remark.1.c}}.\]
+$\Gamma(T)$ is closed in $X\oplus Y$ iff
+\[\te{\ref{vi.remark.1.a}}+\te{\ref{vi.remark.1.b}}\Lorarr\te{\ref{vi.remark.1.c}}.\]
+Which is \rec{much} weaker then continuity of $T$. The closed graph theorem says that one can assume \ref{vi.remark.1.b} in order to prove \ref{vi.remark.1.c} (i.e., get continuity of $T$).
+
+\renewcommand{\H}{\mathscr{H}}
+\begin{cor}[Hellinger-Toeplitz Theorem]\label{vi.15}\index{Hellinger-Toeplitz Theorem}
+    Let $\func{A}{\H}{\H}$ be a linear map from a Hilbert space $\H$ to itself. Suppose that $A$ is \bol{hermitian}, that is
+    \[\forall\varphi,\psi\in\H\colon\,\scal{\varphi}{A\psi}=\scal{A\varphi}{\psi}.\tag{6.20}\label{6.20}\]
+    Then $A$ is continuous.
+\end{cor}
+
+\begin{thm}\label{vi.16}
+    Every Banach space $X$ which is not finite-dimensional has an uncountable algebraic dimension, that is, there does not exist a countable set $A=\cupp_{n\in\N}\{x_n\}$, $x_n\in X$ such that
+    \[X=\te{\rec{span}}(A)=\Big\{\sum_{j=1}^N\alpha_jx_j\colon N\in\N,\alpha_j\in\K\Big\}.\tag{6.21}\label{6.21}\]
+\end{thm}

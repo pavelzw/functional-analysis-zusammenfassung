@@ -1,0 +1,59 @@
+\section{Weak convergence I}
+\begin{definition}[Weak and weak$\ast$ (weak star) convergence]\label{vii.1}
+    Let $X$ be a Banach space and $X^*$ its dual.
+    \begin{enumerate}[label=\alph*)]
+        \item \label{vii.1.a}A sequence $\xn\subset X$ \bol{converges weakly} to $x\in X$ if for all $\ell\in X^*$
+        \[\limn\ell(x_n)=\ell(x).\tag{7.1}\label{7.1}\]
+        We write $x_n\weak x$, or $x_n\rarr x$ weakly or w-$\limn x_n=x$.
+        \item \label{vii.1.b}A sequence $(\ell_n)_n\subset X^*$ is \bol{weak$\ast$ convergent}\index{convergence!weakly$\ast$} to $\ell\in X^*$ if for all $x\in X$
+        \[\limn\ell_n(x)=\ell(x).\tag{7.2}\label{7.2}\]
+        We write $\ell_n\rarr\ell$ weak$\ast$ or $\ell_n\weakstar\ell$ or w$\ast$-$\limn\ell_n=\ell$.
+    \end{enumerate}
+\end{definition}
+
+\paragraph{Remark}
+\begin{enumerate}[label=\arabic*)]
+    \item weak and weak$\ast$ Cauchy sequences are similarly defined. E.g. $\xn\subset X$ is a \bol{\rec{weak Cauchy sequence}} if 
+    \[(\ell(x_n))_n \te{ is a Cauchy sequence in }\K\;\;\forall\ell\in X^*.\tag{7.3}\label{7.3}\]
+    Similarly for weak$\ast$ Cauchy sequences.
+    
+    \item Note that weak$\ast$ convergence of $(\ell_n)_n\subset X^*$ is just pointwise convergence of $(\ell_n)_n$.
+    
+    \item If $X$ is reflexive ($X^{\ast\ast}\cong X$), then weak$\ast$ convergence and weak convergence on $X^*$ are the same.
+\end{enumerate}
+
+\begin{definition}
+    A set $A\subset X$ (respectively $X^*$) is \bol{weakly sequentially compact} \rec{(}respectively \bol{weak$\ast$ sequentially compact}\rec{)} if every sequence in $A$ has a weakly \rec{(}respectively weak$\ast$\rec{)} convergent subsequence, whose weak \rec{(}respectively weak$\ast$\rec{)} limit is also in $A$.
+\end{definition}
+
+\paragraph{Notation}
+Let $X$ be a Banach space with norm $\|\cdot\|$. We will say that $x_n$ converges \bol{\rec{strongly}}\index{convergence!strongly} to $x$ if 
+\[\limn\|x_n-x\|=0.\]
+(i.e. usual convergence w.r.t. the norm)
+
+\begin{lem}\label{vii.3}
+    Let $X$ be a Banach space with norm $\|\cdot\|$. Then
+    \begin{enumerate}[label=\alph*)]
+        \item \label{vii.3.a}The weak limit of a sequence $\xn\subset X$ is unique. The same holds for weak$\ast$ convergence.
+        \item \label{vii.3.b}Strong convergence in $X$ implies weak convergence. Strong convergence in $X^*$ implies weak$\ast$ convergence.
+        \item \label{vii.3.c}If $\elln\subset X^*$, $\ell_n\weakstar \ell$, then
+        \[\|\ell\|_{X^*}\leq\liminfn\|\ell_n\|_{X^*}.\]
+        \item \label{vii.3.d}If $\xn\subset X$, $x_n\weak x$, then 
+        \[\|x\|\leq\liminfn\|x_n\|.\]
+        \rec{(}lower semi-continuity of the norm w.r.t. weak convergence\rec{)}
+        \item \label{vii.3.e}If $\xn\subset X$ is weakly convergent, then it is bounded. If $\elln\subset X^*$ is weak$\ast$ convergent then it is bounded.
+        \item \label{vii.3.f}Assume that $\xn\subset X,\elln\subset X^*$, $x_n\rarr x$ \rec{(}strong convergence\rec{)}, $\ell_n\weakstar\ell$ \rec{(}weak$\ast$ convergence\rec{)}. Then
+        \[\ell_n(x_n)\lorarr\ell(x).\]
+        The same conclusion holds if
+        \[x_n\weak x\te{ and }\ell_n\lorarr\ell\te{ \rec{(}strongly in }X^*\te{)}.\]
+    \end{enumerate}
+\end{lem}
+
+\begin{thm}\label{vii.4}
+    Assume that the Banach space $X$ is separable. Then the closed unit ball $\overline{B_1^*(0)}$ in $X^*$ is weak$\ast$ sequentially compact.
+\end{thm}
+
+\begin{cor}\label{vii.5}
+    If $X$ is reflexive and $X^*$ (\(X^** \cong X\)) is separable, 
+    then any bounded sequence $\xn$ in $X$ has a weakly convergent subsequence.
+\end{cor}
