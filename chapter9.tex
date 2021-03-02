@@ -1,0 +1,36 @@
+\section{Strictly convex Banach space}
+
+\begin{definition}\label{ix.1}
+    A Banach space $X$ is \bol{uniformly convex}\index{convex!uniformly} if for all $\varepsilon>0$ there exists $\delta_\varepsilon>0$ such that $x,y\in B_{\overline{1}}$ \rec{(}i.e., $\|x\|,\|y\|\leq1$\rec{)} and $\|x-y\|>\varepsilon$ implies $\|\frac{x+y}{2}\|<1-\delta_\varepsilon$.
+\end{definition}
+
+We will need some (topological) preparations for the proof of reflexivity, but we will not dig too deep into this.\vspace{4mm}
+    
+Given a Banach space $X$, we have to study certain basic "open sets" in $X^{**}$ of the form
+\[V(\xi)=V_{\ell_1,\ldots,\ell_n}^\varepsilon(\xi):=\{\eta\in X^{**}\colon|(\eta-\xi)(\ell_j)|<\varepsilon,\,1\leq j\leq n\}\tag{9.1}\label{9.1}\]
+where we are given $n\in \N$ and $\ell_1,\ldots,\ell_n\in X^*$. These sets are not accidental. They are the building blocks for the $\sigma(X^{**},X^*)$ topology on $X^{**}$, i.e., general open sets on $X^{**}$ (in this topology) are finite intersections and arbitrary unions of $V$s of the form \eqref{9.1}. (The sets $V$ in \eqref{9.1} form a "basis of the $\sigma(X^{**},X^*)$ topology" on $X^{**}$, also called the $\sigma(X^{**},X^*)$ topology).
+
+\begin{lem}\label{ix.2}
+    Let $X$ be a Banach space, $\ell_1,\ldots,\ell_k\in X^*$ and $\gamma_1,\ldots,\gamma_k\in\K$. Then the following are equivalent:
+    \begin{enumerate}[label=\alph*)]
+        \item \label{ix.2.a}$\forall\varepsilon>0\,\exists x\in X$ with $\|x\|\leq1$ and
+        \[|\ell_j(x)-\gamma_j|<\varepsilon\;\;\;\forall j=1,\ldots,k,\tag{9.2}\label{9.2}\]
+        \item \label{ix.2.b} \[\Big|\sum_{j=1}^k\beta_j\gamma_j\Big|\leq\Big\|\sum_{j=1}^k\beta_j\ell_j\Big\|_{E^*}\;\;\;\forall\beta_1,\ldots,\beta_k\in\K.\tag{9.3}\label{9.3}\]
+    \end{enumerate}
+\end{lem}
+
+\begin{lem}\label{ix.3}
+    Let $X$ be a Banach space and $B_{\overline{1}}$ the closed, centered unit ball in $X$ and $\JXX$ the canonical injection. Then for any $\varepsilon>0,k\in\N,\ell_1,\ldots,\ell_k\in X^*$ and any $\xi\in B_{\overline{1}}^{**}=\{\eta\in X^{**}\colon\|\eta\|_{X^{**}}\leq1\}$ there exists $x\in B_{\overline{1}}$ such that
+    \[J(x)\subset V_{\ell_1,\ldots,\ell_k}^\varepsilon(\xi)=\{\eta\in X^{**}\colon|(\eta-\xi)(\ell_j)|<\varepsilon,j=1,\ldots,k\}.\tag{9.5}\label{9.5}\]
+\end{lem}
+
+(Since the above sets $V=V_{\ell_1,\ldots,\ell_k}^\varepsilon(\xi)$ are a basis of the so-called $\sigma(X^{**},X^*)$ topology, this means that $J(B_{\overline{1}})$ is dense in $B_{\overline{1}}^{**}$ in this topology)
+
+\rec{Warning:} $\JXX$ is isometric, thus $J(B_{\overline{1}})$ is always closed in $X^{**}$ w.r.t. the norm $\|\cdot\|_{X^{**}}$ on $X^{**}$. Thus $J(B_{\overline{1}})$ is not dense in the strong topology (w.r.t. the norm $\|\cdot\|_{X^{**}}$) unless $J(B_{\overline{1}})=B_{\overline{1}}^{**}$, but this is equivalent to $J(X)=X^{**}$, i.e., $X$ is reflexive.\vspace{1.5mm}
+
+Nevertheless, Lemma \ref{ix.3} shows that $J(B_{\overline{1}})$ is always dense in $B_{\overline{1}}^{**}$ in the sense of \eqref{9.5}. We will only need the $k=2$ version of \eqref{9.5}, i.e., neighborhoods of the form \eqref{9.1}:
+\[V_{\ell_1,\ell_2}^\varepsilon(\xi)=\{\eta\in X^{**}\colon|\eta(\ell_j)-\xi(\ell_j)|<\varepsilon,j=1,2\}.\]
+
+\begin{thm}[Milman-Pettis]\label{ix.4}\index{Milman-Pettis}
+    Every uniformly convex Banach space $X$ is reflexive.
+\end{thm}
