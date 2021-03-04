@@ -1,0 +1,80 @@
+\section{$L^p$-spaces, reflexivity, separability}
+
+\subsection{Study of $L^p$, $1<p<\infty$}
+
+\begin{lem}[Clarkson's first inequality]\label{xi.1}\index{Clarkson's inequalities!first inequality}
+	Let $2\leq p<\infty$. Then
+	\[\Big\|\frac{f+g}{2}\Big\|_p^p+\Big\|\frac{f-g}{2}\Big\|_p^p\leq\frac{1}{2}(\|f\|_p^p+\|g\|_p^p)\tag{11.1}\label{11.1}\]
+	for all $f,g\in L^p$.
+\end{lem}
+
+\begin{lem}\label{xi.2}
+	$L^p(\mu)$ is uniformly convex when $2\leq p<\infty$.
+
+    Hence also reflexive by Theorem \ref{ix.4}.
+\end{lem}
+
+\begin{thm}\label{xi.3}
+	$L^p(\mu)$ is reflexive also for $1<p<2$.
+\end{thm}
+
+\begin{thm}[Riesz representation theorem, $1<p<\infty$]\label{xi.4}\index{Riesz representation theorem, $1<p<\infty$}
+	Let $1<p<\infty$ and $\varphi\in\left(L^p\right)^*$. Then there exists a unique $u_\varphi\in L^q$ such that
+	\[\varphi(f)=\int u_\varphi fd\mu\;\;\;\forall f\in L^p.\tag{11.6}\label{11.6}\]
+	Moreover, $\|u\|_q=\|\varphi\|_{\left(L^p\right)^*}$.
+\end{thm}
+
+\begin{thm}\label{xi.5}
+	Let $\lambda$ be the Lebesgue measure on $\R^d$ with the usual Borel $\sigma$-algebra. Then $L^p(\R^d)$ is separable for any $1\leq p<\infty$. Moreover, $C_c(\R^d)$, the continuous functions with compact support are dense in $L^p(\R^d)$.
+
+    For \(1 \leq p < \infty\), \(L^p(\R^d)\) is separable.
+\end{thm}
+
+\subsection{Study of $L^1(\R^d)$}
+
+\begin{thm}[Riesz representation theorem for $L^1$]\label{xi.6}\index{Riesz represenation theorem for $L^1$}
+	Let $\varphi\in\left(L^1(\R^d)\right)^*$. Then there exists a unique function $u\in L^\infty(\R^d)$ such that
+	\[\varphi(f)=\int ufd\lambda\;\;\;\forall f\in L^1.\]
+	Moreover
+	\[\|u\|_\infty=\|\varphi\|_{\left(L^1\right)^*}.\]
+\end{thm}
+
+\paragraph{Remark}
+Holds also for $L^1(\mu)$, $\mu$ a regular $\sigma$-finite measure on a metric space. Again this allows us to identify the abstract space $\left(L^1\right)^*$ with a concrete function space and one usually makes the identification $\left(L^1\right)^*=L^\infty$.
+
+\subsection{Study of $L^\infty$}
+
+This is more complicated and we will not give a full answer in these notes. We already know that $L^\infty=(L^1)^*$, thanks to Theorem \ref{xi.6}. Being a dual space, $L^\infty$ has some nice properties. E.g.\vspace{1mm}
+
+If $(\Omega,\A,\mu)$ is a measure space and $\fn\subset L^\infty(\mu)$ is bounded (in $L^\infty$) then there exists a subsequence $(f_{n_k})_k$ and some $f\in L^\infty(\mu)$, such that $f_{n_k}\weakstar f$, that is
+\[\int gf_{n_k}d\mu\lorarr\int gfd\mu\;\;\,\forall g\in L^1(\mu).\]
+This is a consequence of the abstract result that the unit ball of a Banach space $X^*$ is weak$\ast$ sequentially compact, if the Banach space $X$ is separable (Theorem \ref{vii.4}). However $L^\infty(\mu)$ is not reflexive (unless the space $\Omega$ consists of finitely many points). But since
+\[X\te{ reflexive }\Lolrarr X^*\te{ reflexive}\]
+this would imply that $L^1(\mu)$ is reflexive, which it is not (unless it is finite dimensional) (see Remark after Theorem \ref{xi.6}).
+
+\begin{thm}\label{xi.7}
+	$L^\infty(\R^d)$ is not separable.
+\end{thm}
+
+\begin{lem}\label{xi.8}
+	Let $X$ be a Banach space and assume there exists a family $(O_j)_{j\in I}$ of subsets $O_j\subset X$ with
+	\begin{enumerate}[label=\alph*)]
+		\item For all $j\in I$, $O_j\neq\emptyset$ is open.
+		\item \label{xi.8.b}$O_i\cap O_j=\emptyset$ if $i\neq j$.
+		\item \label{xi.8.c}$I$ is uncountable.
+	\end{enumerate}
+	Then the Banach space $X$ is not separable.
+\end{lem}
+
+In conclusion, we have\vspace{2mm}\\
+
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{c|c|c|c}
+	&Reflexive&Separable&Dual space\\
+	\hline
+	$L^p$, $1<p<\infty$&YES&YES&$L^q$, $\frac{1}{q}+\frac{1}{p}=1$\\
+	\hline
+	$L^1$&NO&YES&$L^\infty$\\
+	\hline
+	$L^\infty$&NO&NO& strictly (much!) bigger than $L^1$
+\end{tabular}
